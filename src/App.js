@@ -5,6 +5,11 @@ import Logo from './components/Logo/Logo';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Rank from './components/Rank/Rank';
 import './App.css';
+const Clarifai = require('clarifai');
+
+const app = new Clarifai.App({
+  apiKey: ''
+ });
 
 const particlesOption = {
   particles: {
@@ -29,6 +34,19 @@ class App extends Component {
     console.log(event.target.value);
   }
 
+  onSubmit = () => {
+    console.log('click');
+    app.models
+    .predict(
+    Clarifai.COLOR_MODEL,"https://samples.clarifai.com/metro-north.jpg"
+    )
+    .then(function(response) {
+        },
+        function(err){
+
+        }
+    );
+    }
   render() {
   return (
     <div className="App">
@@ -37,7 +55,10 @@ class App extends Component {
       <Navigation/>
       <Logo/>
       <Rank/>
-      <ImageLinkForm onInputChange={this.onInputChange}/>
+      <ImageLinkForm 
+      onInputChange={this.onInputChange}
+      onButtonSubmit={this.onButtonSubmit}
+      />
      {/* <FaceRecognition/> */}
     </div>
   )};
