@@ -10,7 +10,7 @@ import './App.css';
   
 
 const app = new Clarifai.App({
-  apiKey: 'f4dd2d7d5d704b8aa109fe8de9398534'
+  apiKey: '38266ead31b14b0cba7bee99b0ce72db'
  });
 
 const particlesOption = {
@@ -20,7 +20,7 @@ const particlesOption = {
       density: {
         enable: true,
         value_area: 800
-        
+
       }
     }
   }
