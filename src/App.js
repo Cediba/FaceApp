@@ -11,7 +11,7 @@ import Rank from './components/Rank/Rank';
 import './App.css';
   
 
-const app = new Clarifai.App({
+const app = new Clarifai.App ({
   apiKey: process.env.REACT_APP_API_KEY
  });
 const particlesOption = {
@@ -46,7 +46,7 @@ class App extends Component {
     return {
       leftCol: clarifaiFace.left_col * width,
       topRow: clarifaiFace.top_row * height,
-      rightCol: width - (clarifaiFace.right_col * width),
+      rightCol: width - ( clarifaiFace.right_col * width),
       bottomRow: height - (clarifaiFace.bottom_row * height)
     }
   }
